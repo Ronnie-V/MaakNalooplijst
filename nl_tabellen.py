@@ -23,7 +23,7 @@ def recreate_tabel_paginabewerkers(cur):
     tablenaam = 'paginabewerkers'
     tableprefix = tablenaam[0:5]
     cur.execute(f'DROP TABLE IF EXISTS `{tablenaam}`')
-    cur.execute(f'CREATE TABLE `{tablenaam}` ("pagina" TEXT, "bewerker" TEXT, `aantal` INTEGER), `isnieuw` INTEGER)')
+    cur.execute(f'CREATE TABLE `{tablenaam}` ("pagina" TEXT, "bewerker" TEXT, `aantal` INTEGER, `isnieuw` INTEGER)')
     cur.execute(f'CREATE INDEX `{tableprefix}_bewerkers` ON `{tablenaam}` ( `bewerker`, `pagina`, `isnieuw` )')
     
     
